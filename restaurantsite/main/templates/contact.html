@@ -1,0 +1,66 @@
+<!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2><span>Contact</span> Us</h2>
+          <p>{{ titles.contact_us_title }}</p>
+        </div>
+      </div>
+
+      <div class="map">
+        <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <div class="container mt-5">
+
+        <div class="info-wrap">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 info">
+              <i class="bi bi-geo-alt"></i>
+              <h4>Location:</h4>
+              <p>{{ inf.location }}</p>
+            </div>
+
+            <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+              <i class="bi bi-clock"></i>
+              <h4>Open Hours:</h4>
+              <p>{{ inf.open_days }}<br>{{ inf.open_hours }} </p>
+            </div>
+
+            <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+              <i class="bi bi-envelope"></i>
+              <h4>Email:</h4>
+              <p>{{ inf.email_1 }}<br>{{ inf.email_2 }}</p>
+            </div>
+
+            <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+              <i class="bi bi-phone"></i>
+              <h4>Call:</h4>
+              <p>{{ inf.phone_number_1 }}<br>{{ inf.phone_number_2 }}</p>
+            </div>
+          </div>
+        </div>
+
+        <form action="" method="post" role="form">
+            {% csrf_token %}
+          <div class="row mt-5">
+            <div class="col-md-6 form-group">
+              {{ message_form.name }}
+            </div>
+            <div class="col-md-6 form-group mt-3 mt-md-0">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+            </div>
+          </div>
+          <div class="form-group mt-3">
+            {{ message_form.subject }}
+          </div>
+          <div class="form-group mt-3">
+            {{ message_form.message }}
+          </div>
+
+          <div class="text-center" style="padding-top: 20px"><button class="btn book-a-table-btn" type="submit">Send Message</button></div>
+        </form>
+
+      </div>
+    </section><!-- End Contact Section -->

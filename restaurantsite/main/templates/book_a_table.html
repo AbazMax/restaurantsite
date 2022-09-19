@@ -1,0 +1,45 @@
+<!-- ======= Book A Table Section ======= -->
+    <section id="book-a-table" class="book-a-table">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Book a <span>Table</span></h2>
+          <p>{{ titles.book_a_table_title }}</p>
+        </div>
+
+        <form action="" method="post" role="form">
+          {% csrf_token %}
+          <div class="row">
+            <div class="col-lg-4 col-md-6 form-group">
+              {{ reservation_form.name }}
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+              {{ reservation_form.email }}
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+              {{ reservation_form.phone }}
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3">
+              {{ reservation_form.req_date }}
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3">
+              {{ reservation_form.req_time }}
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3">
+              {{ reservation_form.persons }}
+              <div class="validate"></div>
+            </div>
+          </div>
+          <div class="form-group mt-3">
+            {{ reservation_form.message }}
+            <div class="validate"></div>
+          </div>
+          <div class="text-center" style="padding-top: 20px"><button class="btn book-a-table-btn" type="submit">Send Message</button></div>
+        </form>
+      </div>
+    </section><!-- End Book A Table Section -->

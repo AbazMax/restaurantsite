@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <section id="reserves">
+    <div class="container">
+        <div class="col-md-10 col-md-offset-1">
+            {% for item in lst %}
+                <div class="row">
+                    <div class="col-md-2">{{ item.date|date:'d-m-Y' }}</div>
+                    <div class="col-md-3"><b>{{ item.name }}</b></div>
+                    <div class="col-md-2">Phone {{ item.phone }}</div>
+                    <div class="col-md-2">Requested date {{ item.req_date }}</div>
+                    <div class="col-md-2">Requested time {{ item.req_time }}</div>
+                    <div class="col-md-1">Persons {{ item.persons }}</div>
+                    <div class="col-md-1">
+                        <a href="{% url 'manager:update_reserve' pk=item.pk %}">
+                            <button type="button" class="btn book-a-table-btn">Close</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-9"><p>Message: <p>{{ item.message }}</p></p></div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    </section>
+{% endblock %}

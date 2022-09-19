@@ -1,0 +1,34 @@
+<!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container-fluid">
+
+        <div class="row">
+          <div class="col-lg-5 align-items-stretch video-box" style='background-image: url({{ about.photo.url }});'>
+            <a href={{ about.video_link }} class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+          </div>
+
+          <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch">
+
+            <div class="content">
+              <h3> {{ about.title_simple }} <strong>{{ about.title_selected }}</strong></h3>
+              <p>
+                {{ about.paragraph_1 }}
+              </p>
+              <p class="fst-italic">
+                {{ about.paragraph_2 }}
+              </p>
+              <ul>
+                <li><i class="bx bx-check-double"></i>{{ about.selected_text_1 }}</li>
+                <li><i class="bx bx-check-double"></i>{{ about.selected_text_2 }}</li>
+                <li><i class="bx bx-check-double"></i>{{ about.selected_text_3 }}</li>
+              </ul>
+              <p>
+                {{ about.paragraph_3 }}
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
