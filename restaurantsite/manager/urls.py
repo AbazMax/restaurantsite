@@ -1,4 +1,4 @@
-from django.urls import path, include
+from django.urls import path
 from .views import reservations_list, update_reservation, message_list, update_message
 
 app_name = 'manager'

@@ -14,6 +14,7 @@ class Category(models.Model):
 
     class Meta:
         ordering = ('position',)
+        verbose_name_plural = 'Categories'
 
 
 class Dish(models.Model):
@@ -37,6 +38,7 @@ class Dish(models.Model):
     class Meta:
         ordering = ('position', 'price',)
         index_together = (('id', 'slug'),)
+        verbose_name_plural = 'Dishes'
 
     def __str__(self):
         return f'{self.name}'
@@ -62,6 +64,7 @@ class Events(models.Model):
 
     class Meta:
         ordering = ('position',)
+        verbose_name_plural = 'Events'
 
     def __str__(self):
         return f'{self.name}'
@@ -86,6 +89,9 @@ class About(models.Model):
     is_visible = models.BooleanField(default=True, unique=True)
     photo = models.ImageField(upload_to=get_file_name)
 
+    class Meta:
+        verbose_name_plural = 'About section'
+
     def __str__(self):
         return f'{self.__class__.__name__}'
 
@@ -98,6 +104,9 @@ class WhyUs(models.Model):
     slogan_3 = models.CharField(max_length=50, db_index=True)
     text_3 = models.TextField(max_length=200, db_index=True)
 
+    class Meta:
+        verbose_name_plural = '"Why us" section'
+
 
 class Gallery(models.Model):
 
@@ -109,6 +118,9 @@ class Gallery(models.Model):
     photo = models.ImageField(upload_to=get_file_name)
     position = models.SmallIntegerField(unique=True)
     is_visible = models.BooleanField(default=True)
+
+    class Meta:
+        verbose_name_plural = 'Gallery'
 
     def __str__(self):
         return f'{self.position}'
@@ -132,6 +144,7 @@ class Chefs(models.Model):
 
     class Meta:
         ordering = ('position',)
+        verbose_name_plural = 'Chefs'
 
     def __str__(self):
         return f'{self.name}'
@@ -144,6 +157,9 @@ class Titles(models.Model):
     contact_us_title = models.CharField(max_length=300, blank=True, db_index=True)
     why_us_title = models.CharField(max_length=300, blank=True, db_index=True)
     special_title = models.CharField(max_length=300, blank=True, db_index=True)
+
+    class Meta:
+        verbose_name_plural = 'Titles'
 
     def __str__(self):
         return f'{self.__class__.__name__}'
@@ -164,6 +180,7 @@ class Testimonials(models.Model):
 
     class Meta:
         ordering = ('position',)
+        verbose_name_plural = 'Testimonials'
 
     def __str__(self):
         return f'{self.name}'
@@ -187,6 +204,8 @@ class OurInformation(models.Model):
     linkedin = models.CharField(max_length=50)
     skype = models.CharField(max_length=50)
 
+    class Meta:
+        verbose_name_plural = 'Our information'
 
 
 class TopSitePresentation(models.Model):
@@ -203,6 +222,7 @@ class TopSitePresentation(models.Model):
 
     class Meta:
         ordering = ('position', )
+        verbose_name_plural = 'Top site presentation'
 
     def __str__(self):
         return f'{self.title}'
@@ -222,6 +242,7 @@ class UserReservation(models.Model):
 
     class Meta:
         ordering = ('-date', '-is_processed')
+        verbose_name_plural = 'User reservations'
 
     def __str__(self):
         return f'{self.name}, {self.phone}: {self.message[:50]}'
@@ -237,6 +258,7 @@ class UserMessage(models.Model):
 
     class Meta:
         ordering = ('-date', '-is_processed')
+        verbose_name_plural = 'User messages'
 
     def __str__(self):
         return f'{self.name}, {self.email}: {self.subject[:100]}'

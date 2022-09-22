@@ -1,9 +1,10 @@
-from django.shortcuts import render, HttpResponse, redirect
+from django.shortcuts import render, redirect
 from .models import Category, Dish, Events, Gallery, Chefs, Testimonials, TopSitePresentation, About, \
     WhyUs, Titles, OurInformation
 from .forms import UserReservationForm, UserMessageForm
 
 # Create your views here.
+
 
 def index(request):
     if request.method == 'POST':

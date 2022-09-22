@@ -1,8 +1,9 @@
-from django.shortcuts import render, HttpResponse, redirect
+from django.shortcuts import render, redirect
 from main.models import UserReservation, UserMessage
 from django.contrib.auth.decorators import  login_required
 
 # Create your views here.
+
 
 @login_required()
 def reservations_list(request):
@@ -11,9 +12,11 @@ def reservations_list(request):
         'lst': lst,
     })
 
+
 def update_reservation(request, pk):
     UserReservation.objects.filter(pk=pk).update(is_processed=True)
     return redirect('manager:reservations_list')
+
 
 @login_required()
 def message_list(request):
@@ -21,6 +24,7 @@ def message_list(request):
     return render(request, 'message_list.html', context={
         'mes_list': mes_list,
     })
+
 
 def update_message(request, pk):
     UserMessage.objects.filter(pk=pk).update(is_processed=True)
