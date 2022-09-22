@@ -21,3 +21,4 @@ def message_list(request):
 def update_message(request, pk):
     UserMessage.objects.filter(pk=pk).update(is_processed=True)
     return redirect('manager:message_list')
+
